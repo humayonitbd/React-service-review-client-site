@@ -1,0 +1,8 @@
+.homeContainer{
+    background: url(/src/images/home-background-img.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+    height: 80vh;
+}
