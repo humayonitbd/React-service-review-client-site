@@ -22,6 +22,7 @@ const ServicesDetails = () => {
                     {user?.email && <h3 className='font-bold'>{user.displayName}</h3>}
                 </div>
                 <form>
+                    <p className='text-start mx-auto mt-5 w-80'>Type reviews message</p>
                 <textarea className="textarea textarea-bordered w-80 my-4" placeholder="Please type review message..."></textarea><br />
                 <input type="submit" className='bg-blue-500 w-80 py-3 rounded text-white font-bold' value="Send" />
                 </form>
