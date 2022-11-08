@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import ServiceProduct from './ServiceProduct';
 
 const Services = () => {
@@ -12,7 +13,7 @@ const Services = () => {
             setServices(data)
         })
     },[])
-console.log(services)
+// console.log(services)
 
 
     return (
@@ -27,7 +28,7 @@ console.log(services)
                 }
             </div>
             <div className='text-center my-8'>
-              <button className='btn btn-primary'>see more</button>
+              <Link to='/service'><button className='btn btn-primary'>See All</button></Link>
             </div>
 
         </div>

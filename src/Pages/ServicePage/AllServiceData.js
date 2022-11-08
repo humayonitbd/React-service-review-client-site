@@ -2,14 +2,15 @@ import React from 'react';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 import { Link } from 'react-router-dom';
-import './ServiceProduct.css'
+import './AllServiceData.css'
 
-const ServiceProduct = ({services}) => {
-    const {name, _id, price, details, img} = services;
+const AllServiceData = ({singleService}) => {
+    const {details, img, name, price, _id} = singleService;
     return (
+        
         <PhotoProvider>
             <PhotoView src={img}>
-            <div className='service'>
+            <div className='AllService'>
           <div className="card bg-base-100 shadow-xl">
           <figure><img src={img} alt="Shoes" /></figure>
           <div className="card-body">
@@ -21,11 +22,12 @@ const ServiceProduct = ({services}) => {
             </div>
            </div>
             </div>
-            
         </div>
             </PhotoView>
         </PhotoProvider>
+            
+        
     );
 };
 
-export default ServiceProduct;
+export default AllServiceData;
