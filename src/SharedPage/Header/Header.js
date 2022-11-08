@@ -17,7 +17,7 @@ const Header = () => {
   <div className='bg-base-100'>
     <div className="navbar w-10/12 mx-auto ">
   <div className="flex-1">
-    <Link className="btn btn-ghost normal-case text-xl">Books reviews project</Link>
+    <Link className="btn btn-ghost normal-case text-xl">Car reviews project</Link>
   </div>
   <div className="flex-none gap-2">
     <ul className='hidden lg:block lg:flex justify-center items-center'>
