@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Register = () => {
-    const {createUser } = useContext(AuthContext)
+    const {createUser, profileUpdate } = useContext(AuthContext)
     const handlerRegister=(e)=>{
         e.preventDefault();
         const form = e.target;
@@ -15,6 +15,7 @@ const Register = () => {
         .then(result =>{
             const user = result.user;
             console.log(user)
+            handlerUpdate(name)
             alert('Create successfull!!!')
             form.reset();
         })
@@ -22,6 +23,15 @@ const Register = () => {
             alert(error.message)
         })
 
+
+        const handlerUpdate =(name)=>{
+            profileUpdate(name)
+            .then(() =>{
+                console.log('name update')
+            })
+            .catch(error =>console.log(error.message))
+
+        }
     }
     return (
         <div>
@@ -48,13 +58,14 @@ const Register = () => {
                     <label className="label">
                         <span className="label-text">Type Password</span>
                     </label>
-                    <input type="text" name='password' placeholder="type password" className="input input-bordered" required/>
+                    <input type="password" name='password' placeholder="type password" className="input input-bordered" required/>
                     </div>
                     <div className="form-control mt-6">
                     <button type='submit' className="btn btn-primary">Submit</button>
                     </div>
+                    <p>You have any account? <Link to='/login' className='text-red-500 font-bold'>login</Link></p>
                 </div>
-                <p>You have any account? <Link to='/login' className='text-red-500 font-bold'>login</Link></p>
+                
                 </form>
             </div>
             </div>

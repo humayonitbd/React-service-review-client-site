@@ -4,6 +4,15 @@ import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Header = () => {
   const {logOut, user} = useContext(AuthContext);
+  const handlerLogout=()=>{
+    logOut()
+    .then(() =>{
+      alert('logOut successfull!!')
+    })
+    .catch(error =>{
+      alert(error.message)
+    })
+  }
     return (
   <div className='bg-base-100'>
     <div className="navbar w-10/12 mx-auto ">
@@ -15,9 +24,16 @@ const Header = () => {
         <li className='mr-10'><Link to='/'>Home</Link></li>
         <li className='mr-10'><Link to='/about'>About</Link></li>
         <li className='mr-10'><Link to='/service'>Service</Link></li>
-        <li className='mr-10'><Link>Logout</Link></li>
+        {user && user?.email ? <>
+        <li className='mr-10'><Link to='/myReview'>My Reviews</Link></li>
+        <li className='mr-10'><Link to='/addService'>Add Service</Link></li>
+        <li className='mr-10' onClick={handlerLogout}><Link>Logout</Link></li>
+        </> :
+        <>
         <li className='mr-10'><Link to='/login'>Login</Link></li>
         <li className='mr-10'><Link to='/register'>Register</Link></li>
+        </>
+        }
         
 
     </ul>
