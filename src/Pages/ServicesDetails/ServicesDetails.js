@@ -1,5 +1,5 @@
 import { data } from 'autoprefixer';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import userimg from '../../images/user.jpg';
@@ -52,6 +52,20 @@ const ServicesDetails = () => {
 
         console.log(reviewPost)
     }
+
+    //review data load 
+    const [peopleReview, setPeopleReview] = useState([]);
+    useEffect(()=>{
+        fetch(`http://localhost:5000/reviewMessage/${_id}`)
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data)
+            setPeopleReview(data)
+        })
+
+    },[])
+    console.log(peopleReview)
+
 
 
     return (

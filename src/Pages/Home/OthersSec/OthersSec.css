@@ -1,0 +1,21 @@
+.othersContainer{
+    background: url(/src/images/othesSection.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: scroll;
+    height: 300px;
+    position: relative;
+    z-index: 2;
+}
+.othersContainer::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #00000098;
+    height: 300px;
+    width: 100%;
+    z-index: -1;
+
+}

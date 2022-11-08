@@ -22,7 +22,7 @@ const Services = () => {
         <div>
             <div className='my-8 text-center'>
                 <h3 className='text-red-600 text-2xl font-bold'>Services</h3>
-                <p className='font-bold text-3xl'>Our best services product</p>
+                <p className='font-bold text-3xl'>Our best services</p>
             </div>
             <div className='mx-10 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 gap-8'>
                 {

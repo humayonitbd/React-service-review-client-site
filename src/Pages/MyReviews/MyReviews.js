@@ -7,7 +7,7 @@ const MyReviews = () => {
     const {user, logOut} = useContext(AuthContext);
     const [reviewData, setReviewData] = useState([]);
     // useTitle('myReview');
-
+    console.log(reviewData)
     useEffect(()=>{
         fetch(`http://localhost:5000/reviewMessage?email=${user?.email}`,{
             headers:{
