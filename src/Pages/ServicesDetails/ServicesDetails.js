@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import img from '../../images/book2.jpg'
 
 const ServicesDetails = () => {
     const singleService = useLoaderData();
@@ -9,9 +10,12 @@ const ServicesDetails = () => {
         <div className='grid grid-cols-1 mx-5 my-10 lg:grid-cols-2 md:grid-cols-2 gap-10'>
            <div className='text-center'>
                 <h3 className='text-center text-2xl font-bold my-5'>Review Section</h3>
+                <div className='flex justify-start w-80 mx-auto items-center '>
+                    <img className='w-10 h-10 rounded-full mr-2' src={img} alt="" />
+                    <h3 className='font-bold'>Humayon forid </h3>
+                </div>
                 <form>
-                <input type="text" placeholder="Type name" className="input input-bordered w-full max-w-xs" /><br />
-                <textarea className="textarea textarea-bordered w-80 my-4" placeholder="message..."></textarea><br />
+                <textarea className="textarea textarea-bordered w-80 my-4" placeholder="Please type review message..."></textarea><br />
                 <input type="submit" className='bg-blue-500 w-80 py-3 rounded text-white font-bold' value="Send" />
                 </form>
            </div>

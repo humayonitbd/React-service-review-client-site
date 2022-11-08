@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Header = () => {
+  const {logOut, user} = useContext(AuthContext);
     return (
-        <div className='bg-base-100'>
-            <div className="navbar w-10/12 mx-auto ">
+  <div className='bg-base-100'>
+    <div className="navbar w-10/12 mx-auto ">
   <div className="flex-1">
     <Link className="btn btn-ghost normal-case text-xl">Books reviews project</Link>
   </div>
