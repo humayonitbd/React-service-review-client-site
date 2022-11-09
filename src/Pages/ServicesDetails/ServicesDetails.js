@@ -26,6 +26,7 @@ const ServicesDetails = () => {
             serviceId: _id,
             review: reviewMessage,
             name: user?.displayName,
+            img:user?.photoURL,
             email: user?.email,
             dateTime:`${time} - ${date}`,
             rating: rating
@@ -63,7 +64,7 @@ const ServicesDetails = () => {
             setPeopleReview(data)
         })
 
-    },[])
+    },[_id])
     console.log(peopleReview)
 
 
@@ -120,6 +121,30 @@ const ServicesDetails = () => {
             
            </div>
             </div>
+        </div>
+        <div className='my-10'>
+        <h2 className='my-3 text-red-600 font-bold'>Product all Review</h2>
+            {
+                peopleReview?.map(preview => {
+                    return(
+                        <div>
+                            
+                            <div className='border-2 mb-3 p-3 rounded'>
+                            <div className='flex justify-start items-start'>
+                                <img className='w-12 h-12 mr-2 rounded-full' src={preview?.img} alt="" />
+                                <div>
+                                <h3>{preview.name}</h3>
+                                <p>{preview.dateTime}</p>
+                                </div>
+                            </div>
+                            <div>
+                                <p>{preview.review}</p>
+                            </div>
+                        </div>
+                        </div>
+                    )
+                })
+            }
         </div>
            </div>
         </div>

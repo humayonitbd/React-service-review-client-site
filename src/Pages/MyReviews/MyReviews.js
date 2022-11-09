@@ -53,7 +53,7 @@ const MyReviews = () => {
             <h3 className='text-red-600 text-center font-bold text-3xl my-6'>Your review</h3>
             <div>
                 {
-                reviewData.map(reviews => <ReviewDetails key={reviews._id} reviews={reviews} reviewDeleteHandler={reviewDeleteHandler}></ReviewDetails>)
+                reviewData?.map(reviews => <ReviewDetails key={reviews._id} reviews={reviews} reviewDeleteHandler={reviewDeleteHandler}></ReviewDetails>)
                 }
             </div>
         </div>

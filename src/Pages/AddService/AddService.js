@@ -1,5 +1,6 @@
 import React from 'react';
 import useTitle from '../../hooks/useTitle';
+import toast, { Toaster } from 'react-hot-toast';
 
 const AddService = () => {
     // useTitle('addService')
@@ -9,11 +10,33 @@ const AddService = () => {
         const name = form.name.value;
         const img = form.imgUrl.value;
         const price = form.price.value;
+        const details = form.details.value;
         const productAdd = {
             name: name,
             img: img,
-            price: price
+            price: price,
+            details: details
         }
+
+        fetch('http://localhost:5000/services',{
+            method: 'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body: JSON.stringify(productAdd)
+
+        })
+        .then(res =>res.json())
+        .then(data =>{
+            console.log(data)
+           if(data.success){
+            toast.success(data.message);
+            alert(data.message)
+           }else{
+            toast.error(data.error);
+           }
+            
+        })
         console.log(productAdd)
 
     }
@@ -42,7 +65,13 @@ const AddService = () => {
                 <label className="label">
                     <span className="label-text">Product Price</span>
                 </label>
-                <input type="text" name='price' placeholder="img url" className="input input-bordered" />
+                <input type="text" name='price' placeholder="Price" className="input input-bordered" />
+                </div>
+                <div className="form-control">
+                <label className="label">
+                    <span className="label-text">Product Details</span>
+                </label>
+                <input type="text" name='details' placeholder="product details" className="input input-bordered" />
                 </div>
                 <div className="form-control mt-6">
                 <button type='submit' className="btn btn-primary">Add product</button>

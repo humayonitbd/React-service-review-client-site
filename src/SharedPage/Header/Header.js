@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import logo from '../../images/logoDentice.jpg';
 
 const Header = () => {
   const {logOut, user} = useContext(AuthContext);
@@ -17,12 +18,13 @@ const Header = () => {
   <div className='bg-base-300'>
     <div className="navbar w-10/12 mx-auto ">
   <div className="flex-1">
-    <Link className="btn btn-ghost normal-case text-xl">Car reviews project</Link>
+    <img src={logo} className='w-20 h-12' alt="" />
+    <Link className="btn btn-ghost normal-case text-xl">Dentist  reviews </Link>
   </div>
   <div className="flex-none gap-2">
     <ul className='hidden lg:block lg:flex justify-center items-center'>
         <li className='mr-10'><Link to='/'>Home</Link></li>
-        <li className='mr-10'><Link to='/about'>About</Link></li>
+        <li className='mr-10'><Link to='/blog'>Blog</Link></li>
         <li className='mr-10'><Link to='/service'>Service</Link></li>
         {user && user?.email ? <>
         <li className='mr-10'><Link to='/myReview'>My Reviews</Link></li>

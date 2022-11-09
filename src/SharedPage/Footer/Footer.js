@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../images/logo.jpg'
+import logo from '../../images/logoDentice.jpg'
 
 const Footer = () => {
     return (
@@ -8,7 +8,7 @@ const Footer = () => {
            <footer className="footer p-10 w-10/12 mx-auto  text-base-content">
   <div>
     
-    <img src={logo} className='w-40' alt="" />
+    <img src={logo} className='w-40 h-28' alt="" />
   </div> 
   <div>
     <span className="footer-title">links</span> 
