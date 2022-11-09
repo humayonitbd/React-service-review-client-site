@@ -5,10 +5,10 @@ import ServiceProduct from './ServiceProduct';
 
 const Services = () => {
     const [services, setServices] = useState([]);
-    // useTitle('service')
+    useTitle('service')
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/services`)
+        fetch(`https://assinment-server-side.vercel.app/services`)
         .then(res =>res.json())
         .then(data =>{
             console.log(data)

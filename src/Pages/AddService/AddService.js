@@ -3,7 +3,7 @@ import useTitle from '../../hooks/useTitle';
 import toast, { Toaster } from 'react-hot-toast';
 
 const AddService = () => {
-    // useTitle('addService')
+    useTitle('addService')
     const handlerAddProduct=(e)=>{
         e.preventDefault();
         const form = e.target;
@@ -18,7 +18,7 @@ const AddService = () => {
             details: details
         }
 
-        fetch('http://localhost:5000/services',{
+        fetch('https://assinment-server-side.vercel.app/services',{
             method: 'POST',
             headers:{
                 'content-type':'application/json'
@@ -30,10 +30,10 @@ const AddService = () => {
         .then(data =>{
             console.log(data)
            if(data.success){
-            toast.success(data.message);
+           toast.success(data.message)
             alert(data.message)
            }else{
-            toast.error(data.error);
+            
            }
             
         })

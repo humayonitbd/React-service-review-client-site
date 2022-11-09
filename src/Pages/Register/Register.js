@@ -2,10 +2,12 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import useTitle from '../../hooks/useTitle';
+import { jwtHandler } from '../../Utilitis/Utilitis';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Register = () => {
     const {createUser, profileUpdate } = useContext(AuthContext);
-    // useTitle('register');
+    useTitle('register');
     const handlerRegister=(e)=>{
         e.preventDefault();
         const form = e.target;
@@ -17,12 +19,14 @@ const Register = () => {
         .then(result =>{
             const user = result.user;
             console.log(user)
+            jwtHandler(user)
             handlerUpdate(name)
-            alert('Create successfull!!!')
+            // alert('Create successfull!!!')
+            toast.success('Create successfull!!!')
             form.reset();
         })
         .catch(error =>{
-            alert(error.message)
+            toast.error('Do not create account!!')
         })
 
 

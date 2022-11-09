@@ -9,7 +9,7 @@ import PrivetRoutes from "./PrivetRoutes";
 
 const { createBrowserRouter } = require("react-router-dom");
 const { default: Main } = require("../layout/Main/Main");
-const { default: About, default: Blog } = require("../Pages/About/Blog");
+const { default: Blog } = require("../Pages/Blog/Blog");
 const { default: Home } = require("../Pages/Home/Home/Home");
 
 const router = createBrowserRouter([
@@ -20,14 +20,14 @@ const router = createBrowserRouter([
         {path:'/register', element:<Register></Register>},
         {path:'/service', element:<ServicePage></ServicePage>},
         {path:'/service/:id',
-        loader:({params})=> fetch(`http://localhost:5000/allService/${params.id}`),
+        loader:({params})=> fetch(`https://assinment-server-side.vercel.app/allService/${params.id}`),
          element:<ServicesDetails></ServicesDetails>},
          {path:'/myReview', element:<PrivetRoutes><MyReviews></MyReviews></PrivetRoutes>},
          {path:'/addService', element:<PrivetRoutes><AddService></AddService></PrivetRoutes>},
          {path:'/myReview/:id',
          loader:({params})=>{
             console.log(params.id)
-           return fetch(`http://localhost:5000/reviewMessageSingle/${params.id}`)
+           return fetch(`https://assinment-server-side.vercel.app/reviewMessageSingle/${params.id}`)
          },
          
           element:<UpdateReview></UpdateReview>}

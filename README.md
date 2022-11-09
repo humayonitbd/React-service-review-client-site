@@ -68,3 +68,17 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+##### my website details
+##### Website Name: Dentist reviews website
+##### Livce website link: 
+##### Website Functinality and details
+##### My dentists website is a unique creative website my website homepage has a banner and home page three products taken from database and extra 2 section unique design done And below is a footer.And there is a page called Services where the products are fetched from the database and each product has a button which on click.
+##### When clicked, a dynamic popup will pop up as the ID of each product and there is a form to leave a review,And the review page has two sections in the first section to give reviews And in the unique section the product details are given and here are the reviews.
+##### All the comments of those who give are given below the product details and the user will read these comments each of the reviews,Every reviews will show according to the avatar user there is a page called MyTV and from there the reviews can be deleted and updated as well as the reviews will be in government means big to small according to timing and To provide security to the website, website login is used, private routers are used and the website.
+##### Every section and structure of the website is very well done and the website.Tailwend CSS and daysiui are used for website design Various questions are answered on the blog page of the website.
+##### Tried to make the website a bit creative and unique and all the functionalities on the website are very clear and tried to make them as much as possible.
+
+
+

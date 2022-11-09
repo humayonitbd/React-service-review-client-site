@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import userimg from '../../images/user.jpg';
+import toast, { Toaster } from 'react-hot-toast';
 
 const ServicesDetails = () => {
     const singleService = useLoaderData();
@@ -16,7 +17,7 @@ const ServicesDetails = () => {
     const showDate = new Date();
     const date = showDate.toDateString();
     const time = showDate.getHours()+":"+showDate.getMinutes()+":"+showDate.getSeconds();
-    console.log(time,date)
+    // console.log(time,date)
 
     const reviewPostHandler=(e)=>{
         e.preventDefault();
@@ -28,11 +29,12 @@ const ServicesDetails = () => {
             name: user?.displayName,
             img:user?.photoURL,
             email: user?.email,
-            dateTime:`${time} - ${date}`,
+            date: date,
+            time: time,
             rating: rating
             
         }
-        fetch('http://localhost:5000/reviewMessage',{
+        fetch('https://assinment-server-side.vercel.app/reviewMessage',{
             method: 'POST',
             headers:{
                 'content-type':'application/json'
@@ -43,10 +45,10 @@ const ServicesDetails = () => {
         .then(data =>{
             console.log(data)
             if(data.success){
-                alert(data.message)
+               toast.success(data.message)
                 e.target.reset();
             }else{
-                alert(data.error)
+                toast.error(data.error)
             }
         })
         .catch(error =>console.log(error.message))
@@ -57,7 +59,7 @@ const ServicesDetails = () => {
     //review data load 
     const [peopleReview, setPeopleReview] = useState([]);
     useEffect(()=>{
-        fetch(`http://localhost:5000/reviewMessage/${_id}`)
+        fetch(`https://assinment-server-side.vercel.app/reviewMessage/${_id}`)
         .then(res => res.json())
         .then(data =>{
             console.log(data)
@@ -134,7 +136,10 @@ const ServicesDetails = () => {
                                 <img className='w-12 h-12 mr-2 rounded-full' src={preview?.img} alt="" />
                                 <div>
                                 <h3>{preview.name}</h3>
-                                <p>{preview.dateTime}</p>
+                                <p>
+                                    <span>{preview.time}-</span> 
+                                    <span>{preview.date}</span> 
+                                </p>
                                 </div>
                             </div>
                             <div>

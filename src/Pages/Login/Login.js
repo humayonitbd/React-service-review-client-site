@@ -3,10 +3,11 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import useTitle from '../../hooks/useTitle';
 import { jwtHandler } from '../../Utilitis/Utilitis';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Login = () => {
     const {login, loginGoogle} = useContext(AuthContext)
-    // useTitle('login');
+    useTitle('login');
     const navigete = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -21,7 +22,8 @@ const Login = () => {
             const user = result.user;
             console.log(user)
             jwtHandler(user)
-            alert('Login successfull!!')
+            // alert('Login successfull!!')
+            toast.success('Login successfull!!')
             form.reset();
             navigete(from, {replace: true})
         })
@@ -36,7 +38,8 @@ const Login = () => {
         .then(result =>{
             const user = result.user
             console.log(user)
-            alert('Login successfully !!')
+            jwtHandler(user)
+            toast.success('Login successfull!!')
             navigete(from, {replace: true})
         })
         .catch(error =>console.log(error))

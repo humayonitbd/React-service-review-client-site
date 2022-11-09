@@ -2,7 +2,7 @@ import React from 'react';
 import useTitle from '../../hooks/useTitle';
 
 const Blog = () => {
-    // useTitle('about');
+    useTitle('blog');
     return (
         <div className='lg:w-5/12 lg:mx-auto md:w-5/12 md:mx-auto mb-96'>
             <div className="dropdown mb-10">

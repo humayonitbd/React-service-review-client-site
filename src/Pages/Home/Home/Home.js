@@ -6,7 +6,7 @@ import OthersSec from '../OthersSec/OthersSec';
 import Services from '../Services/Services';
 
 const Home = () => {
-    // useTitle('Home');
+    useTitle('Home');
     return (
         <div>
             <HomeBanar></HomeBanar>

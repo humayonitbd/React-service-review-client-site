@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
 
 const UpdateReview = () => {
     const updateProduct = useLoaderData();
@@ -13,7 +14,7 @@ const UpdateReview = () => {
         }
         console.log(updateReview)
 
-        fetch(`http://localhost:5000/reviewMessage/${updateProduct._id}`, {
+        fetch(`https://assinment-server-side.vercel.app/reviewMessage/${updateProduct._id}`, {
             method: 'PUT',
             headers:{
                 'content-type':'application/json'
@@ -23,7 +24,8 @@ const UpdateReview = () => {
         .then(res =>res.json())
         .then(data =>{
             console.log(data)
-            alert(data.message)
+            toast.success(data.message)
+
             
         })
     }

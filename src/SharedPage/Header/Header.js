@@ -19,7 +19,7 @@ const Header = () => {
     <div className="navbar w-10/12 mx-auto ">
   <div className="flex-1">
     <img src={logo} className='w-20 h-12' alt="" />
-    <Link className="btn btn-ghost normal-case text-xl">Dentist  reviews </Link>
+    <Link className="font-bold ml-1 text-xl">Dentist  reviews </Link>
   </div>
   <div className="flex-none gap-2">
     <ul className='hidden lg:block lg:flex justify-center items-center'>
