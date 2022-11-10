@@ -7,11 +7,15 @@ import './ServiceProduct.css'
 const ServiceProduct = ({services}) => {
     const {name, _id, price, details, img} = services;
     return (
-        <PhotoProvider>
-            <PhotoView src={img}>
+       
+            
             <div className='service'>
           <div className="card bg-base-100 shadow-xl">
+          <PhotoProvider>
+          <PhotoView src={img}>
           <figure><img src={img} alt="Shoes" /></figure>
+          </PhotoView>
+          </PhotoProvider>
           <div className="card-body">
             <h2 className="card-title">{name}</h2>
             <p>Price: ${price}</p>
@@ -23,8 +27,8 @@ const ServiceProduct = ({services}) => {
             </div>
             
         </div>
-            </PhotoView>
-        </PhotoProvider>
+           
+        
     );
 };
 

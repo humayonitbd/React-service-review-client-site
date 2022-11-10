@@ -4,7 +4,7 @@ import useTitle from '../../hooks/useTitle';
 const Blog = () => {
     useTitle('blog');
     return (
-        <div className='lg:w-5/12 lg:mx-auto md:w-5/12 md:mx-auto mb-96'>
+        <div className='lg:w-5/12 mt-10 lg:mx-auto md:w-5/12 md:mx-auto mb-96'>
             <div className="dropdown mb-10">
             <label tabIndex={0} className="btn m-1">Difference between sql and nosql</label>
             <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-96">

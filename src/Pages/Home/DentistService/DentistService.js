@@ -2,11 +2,10 @@ import React from 'react';
 import detal1 from '../../../images/home-section-img/dental1.jpg'
 import detal2 from '../../../images/home-section-img/dental2.jpg'
 
-import './CarService.css'
 
-const CarService = () => {
+const DentistService = () => {
     return (
-        <div className='my-20'>
+        <div className='my-20 mx-5'>
             <div className='grid grid-cols-1 md:mx-10 lg:mx-10 lg:grid-cols-2 md:grid-cols-2 gap-10'>
             <div className=''>
                 <h2 className='text-red-600 my-3 font-bold text-4xl'>Dental <span className='text-black'>Implant</span></h2>
@@ -19,9 +18,9 @@ const CarService = () => {
         </div>
 
             <div>
-            <div className='grid grid-cols-1 mt-10 md:mx-10 lg:mx-10 lg:grid-cols-2 md:grid-cols-2 gap-10'>
-            <div className='flex justify-start items-center'>
-            <img className='h-96 rounded-3xl' src={detal1} alt="dental" />
+            <div className='grid grid-cols-1 mt-10 md:mx-10 lg:mx-10 lg:grid-cols-2 md:grid-cols-2 gap-10 '>
+            <div className='flex justify-start items-center order-last lg:order-none md:order-none'>
+            <img className='h-96 rounded-3xl' src={detal2} alt="dental" />
             </div>
 
             <div className=''>
@@ -37,4 +36,4 @@ const CarService = () => {
     );
 };
 
-export default CarService;
+export default DentistService;

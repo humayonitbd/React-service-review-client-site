@@ -78,7 +78,7 @@ const ServicesDetails = () => {
             {
             user?.email ? 
             <>
-            <div className='text-center'>
+            <div className='text-center lg:order-none md:order-none sm:order-last order-last'>
                 <div className='flex justify-start w-80 mx-auto items-center '>
                     {user?.email && user?.photoURL ? <img className='w-10 h-10 rounded-full mr-2' src={user.photoURL} alt="" /> : <img className='w-10 h-10 rounded-full mr-2' src={userimg} alt="" /> }
                     {user?.email && <h3 className='font-bold'>{user.displayName}</h3>}
@@ -111,7 +111,7 @@ const ServicesDetails = () => {
            }
             </div>
            
-           <div className=''>
+           <div className='lg:order-none md:order-none sm:order-first order-first'>
             <h3 className='text-center text-2xl font-bold my-5'>Service Details</h3>
             <div className='AllService'>
           <div className="card bg-base-100 shadow-xl">

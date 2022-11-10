@@ -28,7 +28,7 @@ const MyReviews = () => {
         })
 
 
-    },[user?.email, logOut])
+    },[user?.email])
 
     const reviewDeleteHandler=(id)=>{
         fetch(`https://assinment-server-side.vercel.app/reviewMessage/${id}`,{

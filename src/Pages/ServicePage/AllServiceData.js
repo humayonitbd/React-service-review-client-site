@@ -8,11 +8,14 @@ const AllServiceData = ({singleService}) => {
     const {details, img, name, price, _id} = singleService;
     return (
         
-        <PhotoProvider>
-            <PhotoView src={img}>
+        
             <div className='AllService'>
           <div className="card bg-base-100 shadow-xl">
+          <PhotoProvider>
+            <PhotoView src={img}>
           <figure><img src={img} alt="Shoes" /></figure>
+          </PhotoView>
+        </PhotoProvider>
           <div className="card-body">
             <h2 className="card-title">{name}</h2>
             <p>Price: ${price}</p>
@@ -23,8 +26,7 @@ const AllServiceData = ({singleService}) => {
            </div>
             </div>
         </div>
-            </PhotoView>
-        </PhotoProvider>
+            
             
         
     );
