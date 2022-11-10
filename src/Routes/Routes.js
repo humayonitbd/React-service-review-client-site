@@ -21,7 +21,7 @@ const router = createBrowserRouter([
         {path:'/service', element:<ServicePage></ServicePage>},
         {path:'/service/:id',
         loader:({params})=> fetch(`https://assinment-server-side.vercel.app/allService/${params.id}`),
-         element:<ServicesDetails></ServicesDetails>},
+         element:<PrivetRoutes><ServicesDetails></ServicesDetails></PrivetRoutes>},
          {path:'/myReview', element:<PrivetRoutes><MyReviews></MyReviews></PrivetRoutes>},
          {path:'/addService', element:<PrivetRoutes><AddService></AddService></PrivetRoutes>},
          {path:'/myReview/:id',

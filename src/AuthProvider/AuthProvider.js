@@ -7,29 +7,29 @@ const auth = getAuth(app)
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true);
-
+    //signup account
     const createUser = (email, password) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
     }
-
+    //login account
     const login = (email, password) =>{
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
-
+    //google login
     const googleProvider = new GoogleAuthProvider();
     const loginGoogle=()=>{
         setLoading(true);
         return signInWithPopup(auth, googleProvider)
     }
-
+    //sign out 
     const logOut = () =>{
         setLoading(true);
         localStorage.removeItem('review-project');
         return signOut(auth);
     }
-
+    //profile updata
     const profileUpdate=(name)=>{
         setLoading(true);
        return updateProfile(auth.currentUser, {

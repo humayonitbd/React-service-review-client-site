@@ -143,6 +143,7 @@ const ServicesDetails = () => {
                                 </div>
                             </div>
                             <div>
+                                <p>Service: {name}</p>
                                 <p>{preview.review}</p>
                             </div>
                         </div>
