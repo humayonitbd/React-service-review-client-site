@@ -6,8 +6,9 @@ import { jwtHandler } from '../../Utilitis/Utilitis';
 import toast, { Toaster } from 'react-hot-toast';
 
 const Login = () => {
-    const {login, loginGoogle} = useContext(AuthContext)
+    const {login, loginGoogle} = useContext(AuthContext);
     useTitle('login');
+    
     const navigete = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -22,7 +23,6 @@ const Login = () => {
             const user = result.user;
             console.log(user)
             jwtHandler(user)
-            // alert('Login successfull!!')
             toast.success('Login successfull!!')
             form.reset();
             navigete(from, {replace: true})
