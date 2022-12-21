@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import useTitle from '../../hooks/useTitle';
 import { jwtHandler } from '../../Utilitis/Utilitis';
@@ -8,6 +8,7 @@ import toast, { Toaster } from 'react-hot-toast';
 const Register = () => {
     const {createUser, profileUpdate } = useContext(AuthContext);
     useTitle('register');
+    const navigate = useNavigate();
     const handlerRegister=(e)=>{
         e.preventDefault();
         const form = e.target;
@@ -24,6 +25,7 @@ const Register = () => {
             // alert('Create successfull!!!')
             toast.success('Create successfull!!!')
             form.reset();
+            navigate('/');
         })
         .catch(error =>{
             toast.error('Do not create account!!')
